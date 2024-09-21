@@ -24,3 +24,5 @@ function showSectionById(id){
     //Show the section
     document.getElementById(id).classList.remove('hidden')
 }
+
+//----------------------------------------------------------------------

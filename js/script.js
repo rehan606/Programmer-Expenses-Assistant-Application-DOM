@@ -1,4 +1,8 @@
 
+// this is for Expenses history Serial
+let count = 0
+
+// Calculate button event handler
 document.getElementById('calculate').addEventListener('click', function(){
 
     const income = inputFieldGetById('income')
@@ -35,11 +39,33 @@ document.getElementById('calculate').addEventListener('click', function(){
     const result = document.getElementById("results");
     result.classList.remove("hidden");
 
+
+    //----------------------------Expense History-----------------------------
+    count += 1
+    const expenseHistory = document.createElement('div')
+    expenseHistory.className = "bg-white p-3 rounded-md border-l-2 border-indigo-500";
+    expenseHistory.innerHTML = `
+        <p class="text-xs text-gray-500" > <span class="font-bold text-blue-500"> ID: </span>  ${count} </p>
+        <p class="text-xs text-gray-500" > <span class="font-bold text-blue-500"> Date: </span>  ${ new Date().toLocaleDateString()} </p>
+        <p class="text-xs text-gray-500" > <span class="font-bold text-blue-500"> Income: </span>  ${income} Tk. </p>
+        <p class="text-xs text-gray-500" > <span class="font-bold text-blue-500"> Expenses: </span>  ${totalExpenses} Tk. </p>
+        <p class="text-xs text-gray-500" > <span class="font-bold text-blue-500"> Balance: </span>  ${balance} Tk. </p>
+    `;
+
+    // document.getElementById('history-list').appendChild(expenseHistory)
+    const appendHistiry = document.getElementById('history-list')
+    appendHistiry.insertBefore(expenseHistory, appendHistiry.firstChild )
+    
+
     
 
 })
 
 
+
+//--------------=======================---------------------------------
+//--------------=======================---------------------------------
+//--------------=======================---------------------------------
 
 
 // Saving Ammount Calculatio
@@ -74,6 +100,10 @@ document.getElementById('calculate-savings').addEventListener('click', function(
 
 
 })
+
+//--------------=======================---------------------------------
+//--------------=======================---------------------------------
+//--------------=======================---------------------------------
 
 
 // Tab Btn handler
@@ -122,3 +152,19 @@ document.getElementById('history-tab').addEventListener('click', function(){
         "to-purple-600"
     );
 })
+
+
+//-----------------------------------------------------
+
+
+// live validation for input
+document.getElementById("income").addEventListener("input", function () {
+    const inputValue = parseFloat(document.getElementById("income").value);
+  
+    if (isNaN(inputValue) || inputValue <= 0) {
+      document.getElementById("income-error").classList.remove("hidden");
+      return;
+    }
+});
+
+
