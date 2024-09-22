@@ -97,6 +97,12 @@ document.getElementById('calculate-savings').addEventListener('click', function(
     remainingBalanceDisplay.innerText = remainingBalance.toFixed(2)
 
 
+    // Clear the form
+    document.getElementById('income').value = '';
+    document.getElementById('software').value = '';
+    document.getElementById('courses').value = '';
+    document.getElementById('internet').value = '';
+    document.getElementById('savings').value = '';
 
 
 })
