@@ -10,7 +10,6 @@
  <p align="center">
    
 <img src="https://i.ibb.co.com/j6JJcF6/Expense.png" alt="Expense" border="0">
-<img src="https://i.ibb.co.com/G95yx1W/Screenshot-4.png" alt="Screenshot-4" border="0">
 <img src="https://i.ibb.co.com/RP4PnF3/Expense-history.png" alt="Expense-history" border="0">
 
 </br>
